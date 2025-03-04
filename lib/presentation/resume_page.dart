@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:py_site/core/theme/presentation/widgets/theme_toggle_button.dart';
+import 'package:py_site/core/theme/presentation/widgets/base_app_bar.dart';
 import 'package:py_site/core/resume/presentation/widgets/profile_section.dart';
 import 'package:py_site/core/resume/presentation/widgets/skill_section.dart';
 
@@ -9,9 +9,7 @@ class ResumePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: const [ThemeToggleButton()],
-      ),
+      appBar: BaseAppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

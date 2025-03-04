@@ -1,34 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:py_site/presentation/resume_page.dart';
-import 'core/theme/data/data_sources/theme_local_data_source.dart';
-import 'core/theme/data/repositories/theme_repository_impl.dart';
-import 'core/theme/domain/repositories/theme_repository.dart';
-import 'core/theme/presentation/bloc/theme_bloc.dart';
+import 'package:py_site/core/theme/presentation/bloc/theme_bloc.dart';
+import 'package:py_site/core/theme/presentation/bloc/theme_state.dart';
+import 'package:py_site/router/app_router.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
-  final themeRepository = ThemeRepositoryImpl(
-    localDataSource: ThemeLocalDataSourceImpl(),
-  );
+  // Set the URL strategy for the web without "#"
+  setPathUrlStrategy();
 
-  runApp(MyApp(themeRepository: themeRepository));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final ThemeRepository themeRepository;
 
-  const MyApp({super.key, required this.themeRepository});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ThemeBloc(themeRepository: themeRepository),
+      create: (_) => ThemeBloc(),
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
-          return MaterialApp(
+          return MaterialApp.router(
             debugShowCheckedModeBanner: false,
-            theme: state.theme.isDarkMode ? ThemeData.dark() : ThemeData.light(),
-            home: const ResumePage(),
+            theme: state.theme,
+            routerConfig: appRouter,
           );
         },
       ),
