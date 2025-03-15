@@ -6,7 +6,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_event.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_state.dart';
-import 'package:py_site/core/theme/presentation/widgets/navigation_button.dart';
+import 'package:py_site/core/base_widgets/presentation/widgets/navigation_button.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_bloc.dart';
 
 class MockThemeBloc extends MockBloc<ThemeEvent, ThemeState> implements ThemeBloc {}

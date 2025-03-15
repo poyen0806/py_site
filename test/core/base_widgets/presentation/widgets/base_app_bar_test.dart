@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:py_site/core/theme/presentation/widgets/base_app_bar.dart';
-import 'package:py_site/core/theme/presentation/widgets/navigation_button.dart';
+import 'package:py_site/core/base_widgets/presentation/widgets/base_app_bar.dart';
+import 'package:py_site/core/base_widgets/presentation/widgets/navigation_button.dart';
 import 'package:py_site/core/theme/presentation/widgets/theme_toggle_button.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_bloc.dart';
 
