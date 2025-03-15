@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:py_site/core/theme/presentation/widgets/app_theme.dart';
 
 class ThemeState {
-  bool isDarkMode;
+  final bool isDarkMode;
 
-  ThemeState({required this.isDarkMode});
+  const ThemeState({required this.isDarkMode});
 
-  // Define it here to customize the light theme
-  static final ThemeData lightTheme = ThemeData.light();
-
-  // Define it here to customize the dark theme
-  static final ThemeData darkTheme = ThemeData.dark();
-
-  ThemeData get theme => isDarkMode ? darkTheme : lightTheme;
+  ThemeData get theme => AppTheme.getTheme(isDarkMode);
 }
+
