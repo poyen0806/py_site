@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:py_site/core/base_widgets/presentation/widgets/base_app_bar.dart';
+import 'package:py_site/core/widgets/base_app_bar.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_bloc.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_state.dart';
 import 'package:py_site/core/utils/responsive.dart';

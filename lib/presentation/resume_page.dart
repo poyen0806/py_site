@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:py_site/core/base_widgets/presentation/widgets/base_scaffold.dart';
-import 'package:py_site/core/resume/presentation/widgets/education_section.dart';
-import 'package:py_site/core/resume/presentation/widgets/hashtag_section.dart';
-import 'package:py_site/core/resume/presentation/widgets/title_section.dart';
-import 'package:py_site/core/resume/presentation/widgets/self_promotion_section.dart';
-import 'package:py_site/core/utils/responsive.dart';
+import 'package:py_site/core/widgets/base_scaffold.dart';
+import 'package:py_site/feature/resume/presentation/sections/education_section.dart';
+import 'package:py_site/feature/resume/presentation/sections/experience_section.dart';
+import 'package:py_site/feature/resume/presentation/sections/hashtag_section.dart';
+import 'package:py_site/feature/resume/presentation/sections/project_section.dart';
+import 'package:py_site/feature/resume/presentation/sections/title_section.dart';
+import 'package:py_site/feature/resume/presentation/sections/self_promotion_section.dart';
 
 /// The ResumePage is the main page for displaying the my resume.
 class ResumePage extends StatelessWidget {
@@ -23,36 +24,37 @@ class ResumePage extends StatelessWidget {
 
             // Main Section: This is the main section of the page
             // It contains some sub-sections: Hashtags and Self Promotion .etc
-            IntrinsicHeight(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Section for Hashtags: This is a flex section that takes 2 parts of the available space
-                  Expanded(flex: 2, child: HashtagSection()),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Section for Hashtags: This is a flex section that takes 2 parts of the available space
+                Expanded(
+                  flex: 2,
+                  child: Card(elevation: 4.0, child: HashtagSection()),
+                ),
 
-                  // Divider: A vertical line to visually separate the two sections
-                  VerticalDivider(
-                    thickness: 1,
-                    width: Responsive.getProportionateScreenWidth(context, 20),
-                  ),
+                // Section for Self Promotion, Education, Experience, and others: This is a flex section that takes 7 parts of the available space
+                Expanded(
+                  flex: 7,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Self Promotion Section: This section contains a brief description of myself
+                      Card(elevation: 4, child: SelfPromotionSection()),
 
-                  // Section for Self Promotion, Education, Experience, and others: This is a flex section that takes 7 parts of the available space
-                  Expanded(
-                    flex: 7,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SelfPromotionSection(),
-                        EducationSection(),
-                        // ExperienceSection(),
-                        // ProjectsSection(),
-                      ],
-                    ),
+                      // Education Section: This section contains my educational background
+                      Card(elevation: 4, child: EducationSection()),
+
+                      // Experience Section: This section contains my work experience
+                      Card(elevation: 4, child: ExperienceSection()),
+
+                      // Project Section: This section contains my projects
+                      Card(elevation: 4, child: ProjectSection()),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),

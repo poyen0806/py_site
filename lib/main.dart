@@ -18,21 +18,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => ThemeBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => ThemeBloc(),
+        ),
+      ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
           // Currently only open for computer viewing
           return Responsive.getWidth(context) > 600
               ? MaterialApp.router(
-                debugShowCheckedModeBanner: false,
-                theme: state.theme,
-                routerConfig: appRouter,
-              )
+                  debugShowCheckedModeBanner: false,
+                  theme: state.theme,
+                  routerConfig: appRouter,
+                )
               : MaterialApp(
-                debugShowCheckedModeBanner: false,
-                home: Placeholder(),
-              );
+                  debugShowCheckedModeBanner: false,
+                  home: Placeholder(),
+                );
         },
       ),
     );

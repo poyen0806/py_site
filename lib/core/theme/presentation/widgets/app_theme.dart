@@ -11,6 +11,12 @@ class AppTheme {
         textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
       ),
     ),
+    cardTheme: CardTheme(
+      margin: EdgeInsets.all(16),
+      elevation: 4,
+      color: Colors.orange[50]!,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
@@ -22,6 +28,12 @@ class AppTheme {
         padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
         textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
       ),
+    ),
+    cardTheme: CardTheme(
+      margin: EdgeInsets.all(16),
+      elevation: 4,
+      color: Colors.grey[700]!,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
     ),
   );
 
