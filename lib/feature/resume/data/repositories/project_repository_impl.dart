@@ -3,17 +3,17 @@ import 'package:py_site/feature/resume/domain/repositories/project_repository.da
 
 class ProjectRepositoryImpl implements ProjectRepository {
   @override
-  Future<List<ProjectEntity>> getProjects() async {
+  List<ProjectEntity> getProjects() {
     return [
       ProjectEntity(
-        name: 'Project 1',
-        description: 'This is a description of Project 1.',
-        gitUrl: 'https://github.com/your_username/project1',
+        name: 'py_site',
+        description: 'This project is a personal resume and portfolio website built with Flutter, following the Clean Architecture principles. It is designed to showcase personal information, work experience, education, projects, and other professional details in an interactive and visually appealing manner.  ',
+        gitUrl: 'https://github.com/poyen0806/py_site',
       ),
       ProjectEntity(
-        name: 'Project 2',
-        description: 'This is a description of Project 2.',
-        gitUrl: 'https://github.com/your_username/project2',
+        name: 'Fact Checker Platform',
+        description: 'Fact Checker Platform is a web-based tool designed to verify the authenticity of online information. Users can input an article URL, and the system will retrieve fact-checking data from the Google Fact Check API to display verification results.',
+        gitUrl: 'https://github.com/poyen0806/fact-checker-platform',
       ),
     ];
   }

@@ -4,7 +4,7 @@ import 'package:py_site/feature/resume/presentation/sections/education_section.d
 import 'package:py_site/feature/resume/presentation/sections/experience_section.dart';
 import 'package:py_site/feature/resume/presentation/sections/hashtag_section.dart';
 import 'package:py_site/feature/resume/presentation/sections/project_section.dart';
-import 'package:py_site/feature/resume/presentation/sections/title_section.dart';
+import 'package:py_site/feature/resume/presentation/sections/intro_section.dart';
 import 'package:py_site/feature/resume/presentation/sections/self_promotion_section.dart';
 
 /// The ResumePage is the main page for displaying the my resume.
@@ -19,8 +19,8 @@ class ResumePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Title Section: Displays the title or heading of the page
-            TitleSection(),
+            // Intro Section: Displays the title or heading of the page
+            IntroSection(),
 
             // Main Section: This is the main section of the page
             // It contains some sub-sections: Hashtags and Self Promotion .etc
@@ -29,13 +29,13 @@ class ResumePage extends StatelessWidget {
               children: [
                 // Section for Hashtags: This is a flex section that takes 2 parts of the available space
                 Expanded(
-                  flex: 2,
+                  flex: 23,
                   child: Card(elevation: 4.0, child: HashtagSection()),
                 ),
 
                 // Section for Self Promotion, Education, Experience, and others: This is a flex section that takes 7 parts of the available space
                 Expanded(
-                  flex: 7,
+                  flex: 77,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
