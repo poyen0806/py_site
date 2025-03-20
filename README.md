@@ -30,6 +30,10 @@ lib/
 │
 ├── core/
 │   │
+│   ├── router/
+│   │   ├── app_router.dart
+│   │   └── routes.dart
+│   │
 │   ├── theme/
 │   │   │
 │   │   └── presentation/
@@ -96,10 +100,6 @@ lib/
 │
 ├── presentation/
 │   └── resume_page.dart
-│
-├── router/
-│   ├── app_router.dart
-│   └── routes.dart
 │
 └── main.dart
 ```

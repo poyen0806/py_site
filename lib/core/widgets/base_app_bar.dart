@@ -4,7 +4,7 @@ import 'package:py_site/core/theme/presentation/bloc/theme_bloc.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_state.dart';
 import 'package:py_site/core/widgets/navigation_button.dart';
 import 'package:py_site/core/theme/presentation/widgets/theme_toggle_button.dart';
-import 'package:py_site/router/routes.dart';
+import 'package:py_site/core/router/routes.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar({super.key});

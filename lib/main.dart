@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_bloc.dart';
 import 'package:py_site/core/theme/presentation/bloc/theme_state.dart';
 import 'package:py_site/core/utils/responsive.dart';
-import 'package:py_site/router/app_router.dart';
+import 'package:py_site/core/router/app_router.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 void main() {
