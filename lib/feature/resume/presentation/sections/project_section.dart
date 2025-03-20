@@ -72,6 +72,7 @@ class ProjectSection extends StatelessWidget {
               style: TextStyle(
                 fontSize: Responsive.getProportionateScreenWidth(context, 18),
               ),
+              textAlign: TextAlign.justify,
             ),
             const SizedBox(height: 5),
             Row(
