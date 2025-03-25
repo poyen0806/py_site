@@ -1,19 +1,17 @@
-name: Github Pages
+name: Gh-Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
+      - uses: bluefireteam/flutter-gh-pages@v9
         with:
-          channel: stable
-      - uses: erickzanardo/flutter-gh-pages@v7
-        with:
-          targetBranch: page
-          baseHref: /py-site/
+            target_branch: page
+            base_href: '/py-site/'
