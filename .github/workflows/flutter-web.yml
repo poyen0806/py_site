@@ -14,4 +14,4 @@ jobs:
       - uses: bluefireteam/flutter-gh-pages@v9
         with:
             targetBranch: page
-            baseHref: '/py-site/'
+            baseHref: '/py_site/'
