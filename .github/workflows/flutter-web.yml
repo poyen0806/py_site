@@ -23,7 +23,7 @@ jobs:
 
       # 4. Build Flutter Web
       - name: Build Flutter Web
-        run: flutter build web
+        run: flutter build web --base-href="/py-site/"
 
       # 5. Upload build output as artifact
       - name: Upload Artifact
