@@ -1,4 +1,4 @@
-name: Build & Deploy Flutter Web
+name: Github Pages
 
 on:
   push:
@@ -9,47 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1. Checkout source code
       - uses: actions/checkout@v3
-
-      # 2. Setup Flutter
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-
-      # 3. Install dependencies
-      - name: Install dependencies
-        run: flutter pub get
-
-      # 4. Build Flutter Web
-      - name: Build Flutter Web
-        run: flutter build web --base-href="/py-site/"
-
-      # 5. Upload build output as artifact
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - uses: erickzanardo/flutter-gh-pages@v7
         with:
-          name: web-build
-          path: build/web
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      # 1. Checkout source code
-      - uses: actions/checkout@v3
-
-      # 2. Download build artifact
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: web-build
-          path: build/web
-
-      # 3. Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: build/web
+          targetBranch: page
+          baseHref: /py-site/
