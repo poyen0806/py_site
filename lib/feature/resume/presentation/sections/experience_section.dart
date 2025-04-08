@@ -11,6 +11,6 @@ class ExperienceSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TimelineSection(title: "Education", items: experienceList);
+    return TimelineSection(title: "Experience", items: experienceList);
   }
 }

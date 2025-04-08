@@ -20,11 +20,11 @@ class ProjectSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildTitle(context),
+          Expanded(child: _buildTitle(context)),
           SizedBox(
             height: Responsive.getProportionateScreenHeight(context, 20),
           ),
-          _buildProjectList(context),
+          Expanded(child: _buildProjectList(context)),
         ],
       ),
     );
@@ -77,7 +77,7 @@ class ProjectSection extends StatelessWidget {
             const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [_buildGitButton(context, project.gitUrl)],
+              children: [_buildGitButton(context, project.name, project.gitUrl)],
             ),
           ],
         ),
@@ -85,8 +85,9 @@ class ProjectSection extends StatelessWidget {
     );
   }
 
-  Widget _buildGitButton(BuildContext context, String gitUrl) {
+  Widget _buildGitButton(BuildContext context, String name, String gitUrl) {
     return ElevatedButton(
+      key: Key('github_button_$name'),
       onPressed: () async {
         final Uri url = Uri.parse(gitUrl);
         if (await canLaunchUrl(url)) {
