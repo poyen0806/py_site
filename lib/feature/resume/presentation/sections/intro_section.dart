@@ -13,43 +13,45 @@ class IntroSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          DefaultTextStyle(
-            style: DefaultTextStyle.of(context).style,
-            child: RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: "Welcome, I'm",
-                    style: TextStyle(
-                      fontSize: Responsive.getProportionateScreenWidth(
-                        context,
-                        72,
+          Expanded(
+            child: DefaultTextStyle(
+              style: DefaultTextStyle.of(context).style,
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Welcome, I'm",
+                      style: TextStyle(
+                        fontSize: Responsive.getProportionateScreenWidth(
+                          context,
+                          72,
+                        ),
+                        color: DefaultTextStyle.of(context).style.color,
                       ),
-                      color: DefaultTextStyle.of(context).style.color,
                     ),
-                  ),
-                  TextSpan(
-                    text: " PoYen\n",
-                    style: TextStyle(
-                      fontSize: Responsive.getProportionateScreenWidth(
-                        context,
-                        80,
+                    TextSpan(
+                      text: " PoYen\n",
+                      style: TextStyle(
+                        fontSize: Responsive.getProportionateScreenWidth(
+                          context,
+                          80,
+                        ),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange[400]!,
                       ),
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange[400]!,
                     ),
-                  ),
-                  TextSpan(
-                    text: "Student / Developer",
-                    style: TextStyle(
-                      fontSize: Responsive.getProportionateScreenWidth(
-                        context,
-                        72,
+                    TextSpan(
+                      text: "Student / Developer",
+                      style: TextStyle(
+                        fontSize: Responsive.getProportionateScreenWidth(
+                          context,
+                          72,
+                        ),
+                        color: DefaultTextStyle.of(context).style.color,
                       ),
-                      color: DefaultTextStyle.of(context).style.color,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
