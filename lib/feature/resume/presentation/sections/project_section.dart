@@ -19,12 +19,13 @@ class ProjectSection extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(child: _buildTitle(context)),
+          _buildTitle(context),
           SizedBox(
             height: Responsive.getProportionateScreenHeight(context, 20),
           ),
-          Expanded(child: _buildProjectList(context)),
+          _buildProjectList(context),
         ],
       ),
     );

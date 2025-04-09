@@ -13,7 +13,8 @@ class IntroSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
+          Flexible(
+            fit: FlexFit.loose,
             child: DefaultTextStyle(
               style: DefaultTextStyle.of(context).style,
               child: RichText(
