@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:py_site/core/router/routes.dart';
+import 'package:py_site/presentation/project_page.dart';
 import 'package:py_site/presentation/resume_page.dart';
 // import 'package:py_site/presentation/blog_page.dart';
 // import 'package:py_site/presentation/project_page.dart';
@@ -17,7 +18,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: Routes.project,
-      builder: (context, state) => const ResumePage(), // ProjectPage()
+      builder: (context, state) => const ProjectPage(),
     ),
   ],
 );

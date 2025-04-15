@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:py_site/core/utils/open_link.dart';
 import 'package:py_site/feature/resume/data/repositories/project_repository_impl.dart';
 import 'package:py_site/feature/resume/domain/entities/project_entity.dart';
 import 'package:py_site/core/utils/responsive.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProjectSection extends StatelessWidget {
   ProjectSection({super.key})
@@ -89,12 +89,7 @@ class ProjectSection extends StatelessWidget {
   Widget _buildGitButton(BuildContext context, String name, String gitUrl) {
     return ElevatedButton(
       key: Key('github_button_$name'),
-      onPressed: () async {
-        final Uri url = Uri.parse(gitUrl);
-        if (await canLaunchUrl(url)) {
-          await launchUrl(url);
-        }
-      },
+      onPressed: () => openLink(gitUrl),
       child: Text(
         'View on GitHub',
         style: TextStyle(
